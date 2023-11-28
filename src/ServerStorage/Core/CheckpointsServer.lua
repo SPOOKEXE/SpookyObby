@@ -1,5 +1,10 @@
 local Players = game:GetService("Players")
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local ReplicatedModules = require(ReplicatedStorage:WaitForChild("Modules"))
+
+local ReplicatedData = ReplicatedModules.Services.ReplicatedData
+
 local SystemsContainer = {}
 
 -- // Module // --
@@ -22,6 +27,13 @@ function Module.CharacterAdded( LocalPlayer, Character )
 end
 
 function Module.PlayerAdded( LocalPlayer )
+
+	local Profile = SystemsContainer.DataServer.LoadPlayerInstance( LocalPlayer )
+	if not Profile then
+		warn('Failed to load the target players data: ' .. LocalPlayer.Name)
+		return
+	end
+	ReplicatedData.SetData("PlayerData", Profile.Data, { LocalPlayer })
 
 	task.spawn(Module.CharacterAdded, LocalPlayer, LocalPlayer.Character)
 	LocalPlayer.CharacterAdded:Connect(function( Character )
