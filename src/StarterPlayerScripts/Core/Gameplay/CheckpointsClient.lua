@@ -4,11 +4,11 @@ local SystemsContainer = {}
 -- // Module // --
 local Module = {}
 
-function Module.RegisterObbyCheckpoint( CheckpointInstace )
+function Module.RegisterCheckpoint( CheckpointInstace )
 
 end
 
-function Module.UnregisterObbyCheckpoint( CheckpointInstace )
+function Module.UnregisterCheckpoint( CheckpointInstace )
 
 end
 

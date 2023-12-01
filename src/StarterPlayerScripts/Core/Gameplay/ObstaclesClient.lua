@@ -4,6 +4,14 @@ local SystemsContainer = {}
 -- // Module // --
 local Module = {}
 
+function Module.RegisterObstacle()
+
+end
+
+function Module.UnregisterCheckpoint()
+
+end
+
 function Module.Start()
 
 end

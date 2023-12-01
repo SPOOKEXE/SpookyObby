@@ -5,6 +5,14 @@ local SystemsContainer = {}
 -- // Module // --
 local Module = {}
 
+function Module.RegisterCheckpoint()
+
+end
+
+function Module.UnregisterCheckpoint()
+
+end
+
 function Module.Start()
 
 	Lighting.Ambient = Color3.fromRGB(80,80,80)
